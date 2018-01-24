@@ -12538,12 +12538,15 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "g:\\leeneo\\MyProj\\Hotel\\Hotel.csproj",
+      "projectUniqueName": "G:\\leeneo\\MyProj\\Hotel\\Hotel.csproj",
       "projectName": "Hotel",
-      "projectPath": "g:\\leeneo\\MyProj\\Hotel\\Hotel.csproj",
+      "projectPath": "G:\\leeneo\\MyProj\\Hotel\\Hotel.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "g:\\leeneo\\MyProj\\Hotel\\obj\\",
+      "outputPath": "G:\\leeneo\\MyProj\\Hotel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
