@@ -65,15 +65,19 @@
                 content: '';
                 right: 8px;
                 animation: rollBtn linear .6s infinite;
-                display:none;
-                color:#fff;
+                display: none;
+                color: #fff;
             }
 
         @@keyframes rollBtn {
-            0% {transform: rotate(0deg)}
-            100%{transform:rotate(360deg)}
-        }
+            0% {
+                transform: rotate(0deg)
+            }
 
+            100% {
+                transform: rotate(360deg)
+            }
+        }
     </style>
 </head>
 <body>
@@ -143,16 +147,15 @@
                     $subtn.children().show();
                     $.post('/Management/LoginSubmit?' + 'account=' + usertxt + '&pwd=' + pwdtxt, function (e) {
                         if (e.success) {
-                            //alert(e);
+                            $hpbk.fadeOut();
                             $subtn.text(e.msg);
-                           location.href = "/Room/RealRoomState";
+                            location.href = "/Room/RealRoomState";
                         } else if (e.msg == "用户名或密码错误") {
                             $hpbk.fadeOut();
                             $hpbk.parent().addClass('has-error');
                             $hpbk.text('用户名或密码不正确，请重新输入');
                             $hpbk.fadeIn();
                             $subtn.text("登录");
-
                         } else {
                             alert(e.msg);
                         }
