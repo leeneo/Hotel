@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active">
+            <a href="#">Home</a>
+        </li>
+        <li role="presentation">
+            <a href="#">Profile</a>
+        </li>
+        <li role="presentation">
+            <a href="#">Messages</a>
+        </li>
+    </ul>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('.nav-tabs a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+        })
+    </script>
+</body>
+
+</html>

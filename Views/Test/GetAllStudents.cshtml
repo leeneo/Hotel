@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+@model List<WeChat.Controllers.Student>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAllStudents</title>
+</head>
+<body>
+    @foreach (var m in Model)
+    {
+        <div>
+            <input type="text" value="@m.ID" />
+            <input type="text" value="@m.Name" />
+            <input type="text" value="@m.Age" />
+            <input type="text" value="@m.Birthday" />
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>远期房态</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./neoui/css/neoui.css">
+    <link rel="stylesheet" href="./neoui/css/navbar.css">
+    <link rel="stylesheet" href="./neoui/css/utils.css">
+    <style>
+        body {
+            padding-bottom: 50px;
+        }
+
+        .nav-tabs li {
+            width: 33.33%
+        }
+
+        .nav-tabs li a {
+            border-radius: 0;
+            border-top: 0;
+        }
+
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:focus,
+        .nav-tabs>li.active>a:hover {
+            border-top: 0;
+        }
+
+        .nav-tabs>li:first-child.active>a,
+        .nav-tabs>li:first-child.active>a:focus,
+        .nav-tabs>li:first-child.active>a:hover {
+            border-left: 0;
+        }
+
+        .nav-tabs>li:last-child.active>a,
+        .nav-tabs>li:last-child.active>a:focus,
+        .nav-tabs>li:last-child.active>a:hover {
+            border-right: 0;
+        }
+
+        .list-group-item {
+            border: 0;
+        }
+
+        .panel-body {
+            text-align: center;
+        }
+
+        .label {
+            margin-bottom: 6px;
+            padding: 8px 12px;
+            display: inline-block
+        }
+
+        .table {
+            margin-top: 1rem
+        }
+
+        .tab-pane {
+            margin-top: 1rem;
+        }
+
+        .table {
+            border: 1px solid #c3c3c3;
+        }
+
+        .table thead {
+            background-color: #358fd130;
+        }
+
+        .table thead th {
+            text-align: center;
+        }
+
+        .table td,
+        .table th
+        {
+            border: 1px solid #c5c5c5;
+            padding: 2px!important;
+        }
+
+        .container {
+            overflow: hidden;
+            padding: 4px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 下拉菜单 -->
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="所有房间">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li>
+                        <a href="#">Action</a>
+                    </li>
+                    <li>
+                        <a href="#">Another action</a>
+                    </li>
+                    <li>
+                        <a href="#">Something else here</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a href="#">Separated link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 在住信息列表 -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>编码</th>
+                    <th>已售</th>
+                    <th>未售</th>
+                    <th>总数</th>
+                    <th>占比</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2017/09/15</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>44</td>
+                    <td>-100.00%</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+        <a href="./RealRoomState.html">
+            <img src="./img/navicon/realstate.png" alt="">实时房态
+        </a>
+        <a href="./CustomList.html">
+            <img src="./img/navicon/cuslist.png" alt="">客人列表
+        </a>
+        <a href="./DailyReport.html">
+            <img src="./img/navicon/replist.png" alt="">营业日报
+        </a>
+        <a href="./ForwardState.html">
+            <img src="./img/navicon/forwardstate.png" alt="">远期房态
+        </a>
+        <a href="./UserCenter.html" class="linkBlue">
+            <img src="./img/navicon/usercenter.png" alt="">个人中心
+        </a>
+    </nav>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+
+            //设置当前页导航链接颜色为linkblue
+            function setLinkBlue() {
+                var $links = $('nav a');
+                var title = $('title').text().trim();
+                $links.removeClass('linkBlue');
+                $links.each(function () {
+                    if ($(this).text().trim() === title)
+                        $(this).addClass('linkBlue');
+                });
+            }
+            setLinkBlue();
+        })
+    </script>
+</body>
+
+</html>

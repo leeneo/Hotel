@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<title>微信报表</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		.container {
+			width: 100%;
+			margin: 25% 0;
+			padding: 15px;
+			background: oldlace;
+		}
+
+		.logoWrap {
+			margin: 0 auto;
+			text-align: center;
+			overflow: hidden;
+			width: 200px;
+		}
+
+		.logo {
+			display: inline-block;
+			border-radius: 50%;
+			background: url(./img/logo.jpg) center no-repeat;
+			background-size: contain;
+			width: 100px;
+			height: 100px;
+			background-color: #a2c037;
+		}
+
+		.neo-sub {
+			opacity: .5;
+			width: 100px;
+			transition: all 1s;
+			-moz-transition: all 1s;
+			/* Firefox 4 */
+			-webkit-transition: all 1s;
+			/* Safari 和 Chrome */
+		}
+
+		.neo-sub:hover {
+			opacity: 1;
+			background-color: rgb(133, 173, 21);
+			color: white;
+		}
+
+		.addpddl2 {
+			padding-left: 2px;
+		}
+
+		.help-block {
+			outline: 1px dotted #a94442;
+			outline-offset: 4px;
+			margin-left: 6px;
+			display: none;
+		}
+
+		form {
+			margin-top: 1rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div id="logoWrap" class="logoWrap">
+			<div class="logo"></div>
+			<div class="title">
+				<h2>微信报表</h2>
+			</div>
+		</div>
+		<form>
+			<div class="form-group has-error">
+				<span id="helpBlock" class="help-block addpddl2"></span>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputEmail1">用户名</label>
+				<input type="email" class="form-control" id="neo-userInp" placeholder="用户名">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">密码</label>
+				<input type="password" class="form-control" id="neo-pwdInp" placeholder="密码">
+			</div>
+			<button type="button" class="btn btn-default neo-sub">登录</button>
+		</form>
+	</div>
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(function () {
+			$('.neo-sub').click(function () {
+				var $nUser = $('#neo-userInp');
+				var $nPwd = $('#neo-pwdInp');
+				var usertxt = $nUser.val().trim();
+				var pwdtxt = $nPwd.val().trim();
+				var $hpbk = $('#helpBlock');
+				if (usertxt == '' || pwdtxt == '') {
+					$hpbk.fadeOut();
+					$hpbk.parent().addClass('has-error');
+					$hpbk.text('用户名或密码不能为空，请重新输入');
+					$hpbk.fadeIn();
+				} else if (usertxt === 'lee' && pwdtxt === 'neo') {
+					$hpbk.parent().removeClass('has-error');
+					$hpbk.fadeOut();
+					alert('success login');
+				} else {
+					$hpbk.fadeOut();
+					$hpbk.parent().addClass('has-error');
+					$hpbk.text('用户名或密码不正确，请重新输入');
+					$hpbk.fadeIn();
+				}
+			});
+		})
+	</script>
+</body>
+
+</html>
