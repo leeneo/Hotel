@@ -4,18 +4,27 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="">
 	<title>微信报表</title>
 	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="../../neoui/css/utils.css" rel="stylesheet" />
 	<style>
+		html,
+		body {
+			height: 125%;
+			overflow-y: scroll;
+			background: oldlace;
+			transition: all .5s ease;
+		}
+
 		.container {
 			width: 100%;
 			margin: 25% 0;
 			padding: 15px;
-			background: oldlace;
+			overflow: hidden;
 		}
 
 		.logoWrap {
@@ -35,7 +44,12 @@
 			background-color: #a2c037;
 		}
 
+		.padding-left-2px {
+			padding-left: 2px;
+		}
+
 		.neo-sub {
+			position: relative;
 			opacity: .5;
 			width: 100px;
 			transition: all 1s;
@@ -51,8 +65,30 @@
 			color: white;
 		}
 
-		.addpddl2 {
-			padding-left: 2px;
+		.neo-sub i {
+			font-style: normal;
+			transform: rotate(360deg);
+			position: absolute;
+			top: 6px;
+			background: url(./img/btnLoop.png) center no-repeat;
+			background-size: contain;
+			float: right;
+			height: 20px;
+			width: 20px;
+			content: '';
+			right: 8px;
+			animation: rollBtn linear .6s infinite;
+			display: none;
+			color: #fff;
+		}
+
+		@keyframes rollBtn {
+			0% {
+				transform: rotate(0deg)
+			}
+			100% {
+				transform: rotate(360deg)
+			}
 		}
 
 		.help-block {
@@ -78,7 +114,7 @@
 		</div>
 		<form>
 			<div class="form-group has-error">
-				<span id="helpBlock" class="help-block addpddl2"></span>
+				<span id="helpBlock" class="help-block padding-left-2px"></span>
 			</div>
 
 			<div class="form-group">
@@ -89,33 +125,69 @@
 				<label for="exampleInputPassword1">密码</label>
 				<input type="password" class="form-control" id="neo-pwdInp" placeholder="密码">
 			</div>
-			<button type="button" class="btn btn-default neo-sub">登录</button>
+			<button type="button" class="btn btn-default neo-sub">登录
+				<i></i>
+			</button>
 		</form>
 	</div>
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script>
 		$(function () {
-			$('.neo-sub').click(function () {
+
+			// 解决输入法遮挡
+			$('#neo-pwdInp').click(function () {
+				document.body.scrollTop = 169;
+				window.scrollTop = 169;
+				//$('body').scrollTop(200);
+				//$(window).scrollTop(200);
+				console.log("$('body').scrollTop():" + $('body').scrollTop() + 'px');
+				console.log("$(window).scrollTop():" + $(window).scrollTop() + 'px');
+				console.log('window.scrollTop:' + window.scrollTop + 'px');
+				console.log('document.body.scrollTop:' + document.body.scrollTop + 'px');
+			})
+
+			var $subtn = $('.neo-sub');
+			$subtn.click(function () {
+				document.body.scrollTop = 0;
+				window.scrollTop = 0;
+
 				var $nUser = $('#neo-userInp');
 				var $nPwd = $('#neo-pwdInp');
+				var $hpbk = $('#helpBlock');
 				var usertxt = $nUser.val().trim();
 				var pwdtxt = $nPwd.val().trim();
-				var $hpbk = $('#helpBlock');
 				if (usertxt == '' || pwdtxt == '') {
 					$hpbk.fadeOut();
 					$hpbk.parent().addClass('has-error');
 					$hpbk.text('用户名或密码不能为空，请重新输入');
 					$hpbk.fadeIn();
-				} else if (usertxt === 'lee' && pwdtxt === 'neo') {
-					$hpbk.parent().removeClass('has-error');
-					$hpbk.fadeOut();
-					alert('success login');
 				} else {
-					$hpbk.fadeOut();
-					$hpbk.parent().addClass('has-error');
-					$hpbk.text('用户名或密码不正确，请重新输入');
-					$hpbk.fadeIn();
+					$subtn.text("登录中").append(' <i></i>');
+					$subtn.children().show();
+					// $.post('/Management/LoginSubmit?' + 'account=' + usertxt + '&pwd=' + pwdtxt, function (e) {
+					// 	if (e.success) {
+					// 		$hpbk.fadeOut();
+					// 		$subtn.text(e.msg);
+					// 		location.href = "/Room/RealRoomState";
+					// 	} else if (e.msg == "用户名或密码错误") {
+					// 		$hpbk.fadeOut();
+					// 		$hpbk.parent().addClass('has-error');
+					// 		$hpbk.text('用户名或密码不正确，请重新输入');
+					// 		$hpbk.fadeIn();
+					// 		$subtn.text("登录");
+					// 	} else {
+					// 		alert(e.msg);
+					// 	}
+					// });
+
+				}
+
+			});
+
+			$(document).keydown(function (event) {
+				if (event.keyCode == "13") { //keyCode=13是回车键
+					$('.neo-sub').click();
 				}
 			});
 		})
