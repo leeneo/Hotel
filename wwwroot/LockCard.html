@@ -6,180 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../../neoui/css/neoui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/LockCard.css">
     <title>Document</title>
     <style>
-        body {
-            background: url('./img/flower2.jpg') center 0 no-repeat !important;
-            background-size: cover !important;
-        }
-
-        fieldset {
-            border: none;
-            margin-top: 1.6rem;
-            margin: 0 0 1.6rem;
-            padding: .35em .625em .75em;
-        }
-
-        .regist_wrap ul {
-            padding: 0;
-        }
-
-        .regist_wrap .regist_con {
-            width: 100%;
-            min-height: 3.25rem;
-            position: relative;
-            z-index: 0;
-            margin-bottom: .83333333rem;
-        }
-
-        .regist_con {
-            padding: .83333333rem;
-        }
-
-        .regist_wrap .regist_con .regist_tit {
-            margin: 0;
-        }
-
-        h3 {
-            font-size: 100%;
-        }
-
-        .am-form input[type=text] {
-            width: 100%;
-            padding: .5em;
-        }
-
-        .regist_con div>* {
-            font-size: 1.4rem!important;
-        }
-
-        .am-input-group {
-            position: relative;
-            display: table;
-        }
-
-        .regist_con .am-input-group span {
-            padding: 0;
-            border: 0;
-            vertical-align: middle;
-        }
-        .neo-btn{
-            padding: .66666667rem .83333333rem;
-            border:0;
-        }
-
-        .neo-shadow {
-            background: #b8deff45;
-            width: 90%;
-            margin: 6rem auto;
-            overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 1px 6px 0px #003e71;
-        }
-
-        .neo-lightBlue {
-            color: #54c7f1!important;
-        }
-
-        nav {
-            display: none;
-        }
-
-        .Lockcard_wrap ul {
-            margin-top: 0;
-        }
-
-        .regist_wrap ul {
-            margin: 0;
-        }
-
-        .regist_wrap .regist_con .regist_tit {
-            height: 2.9rem;
-            line-height: 2.9rem;
-            text-align: left;
-            width: 8rem;
-        }
-
-        .regist_wrap .regist_con .regist_innput {
-            padding: 0;
-            margin-top: 0;
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-
-        .regist_wrap .regist_con .regist_innput input {
-            height: 2.9rem;
-            line-height: 2.9rem;
-        }
-
-        .am-form input {
-            border: 0 !important;
-        }
-
-        .am-input-group-label {
-            height: 2.9rem;
-            line-height: 0;
-            overflow: hidden;
-        }
-
-        .am-input-group-label button {
-            height: 2.9rem;
-            line-height: 1.2rem;
-            box-sizing: border-box;
-            border-radius: 0 !important;
-        }
-
-        .regist_wrap .regist_con .regist_yanzm input {
-            border-radius: 0;
-        }
-
-        .am-btn,
-        button,
-        input:not([type=radio]):not([type=checkbox]),
-        select {
-            vertical-align: unset;
-        }
     </style>
 </head>
 
 <body>
-    <section class="warp_content neo-shadow">
-        <div class="am-form regist_in regist_wrap Lockcard_wrap" data-am-validator>
+    <section class="neo-shadow">
+        <div class="Lockcard_wrap">
             <h2 class="neo-logTitle">绑定会员卡</h2>
-            <fieldset>
-                <ul>
-                    <li class="regist_con">
-                        <h3 class="regist_tit neo-lightBlue">会员卡号：</h3>
-                        <div class="regist_innput">
+                <ul class="fieldset">
+                    <li class="">
+                        <h3 class=" neo-lightBlue">会员卡号：</h3>
+                        <div class="">
                             <input type="text" id="as_cardno" class="" placeholder="请输入会员卡号">
                         </div>
                     </li>
-
-                    <li class="regist_con">
-                        <h3 class="regist_tit neo-lightBlue">会员密码：</h3>
-                        <div class="regist_innput">
+                    <li class="">
+                        <h3 class=" neo-lightBlue">会员密码：</h3>
+                        <div class="">
                             <input type="password" id="as_password" class="" placeholder="初始密码为空">
                         </div>
                     </li>
-
-                    <li class="regist_con">
-                        <h3 class="regist_tit">
-                            <a class="w3 neo-lightBlue">验证码：</a>
+                    <li class="">
+                        <h3 class="">
+                            <a class="neo-lightBlue">验证码：</a>
                         </h3>
-                        <div class="regist_innput am-input-group regist_yanzm">
-                            <input type="text" class="am-form-field" id="code" name="code" placeholder="请输入验证码">
-                            <span class="am-input-group-label">
+                        <div class="">
+                            <input type="text" class="" id="code" name="code" placeholder="请输入验证码">
+                            <span class="">
                                 <button type="button" onclick="LockCard_SendMessage()" id="FbtnSendCode" class="neo-btn neo-inputBtn">立即获取</button>
-                                <!--<button type="button" class="am-btn am-btn-primary" disabled>重新获取</button>-->
+                                <!--<button type="button" class="" disabled>重新获取</button>-->
                             </span>
                         </div>
                     </li>
                 </ul>
-                <div class="regist_btn">
-                    <button id="LockCard" class="neo-btn-shadow am-btn am-btn-block am-btn-lg" type="button">确定</button>
+                <div class="">
+                    <button id="LockCard" class="neo-btn-shadow" type="button">确定</button>
                 </div>
-
-            </fieldset>
         </div>
     </section>
 </body>

@@ -21,6 +21,9 @@
             overflow-y: scroll;
             background: oldlace;
             transition: all .5s ease;
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+
         }
 
         .container {
@@ -65,17 +68,23 @@
                 content: '';
                 right: 8px;
                 animation: rollBtn linear .6s infinite;
+                -webkit-animation: rollBtn linear .6s infinite;
+                -moz-animation: rollBtn linear .6s infinite;
                 display: none;
                 color: #fff;
             }
 
         @@keyframes rollBtn {
             0% {
-                transform: rotate(0deg)
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
             }
 
             100% {
-                transform: rotate(360deg)
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
             }
         }
     </style>

@@ -1,0 +1,38 @@
+
+body {
+    background: url('../img/flower2.jpg') center 0 no-repeat !important;
+    background-size: cover !important;
+}
+
+.fieldset {
+    border: none;
+    /* margin-top: 19.2px; */
+    /* margin: 0 0 19.2px; */
+    padding: 6px 10px 12px;
+}
+.fieldset li{
+    padding: 10px 0;
+}
+
+.fieldset li h3 {
+    font-size: 16px;
+}
+
+.neo-btn {
+    padding: 8px 10px;
+    border: 0;
+}
+
+.neo-shadow {
+    background: #b8deff45;
+    width: 90%;
+    margin: 72px auto;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px 0px #003e71;
+}
+
+nav {
+    display: none;
+}
+

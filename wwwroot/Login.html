@@ -18,12 +18,15 @@
 			overflow-y: scroll;
 			background: oldlace;
 			transition: all .5s ease;
+			-webkit-transition: all .5s ease;
+			-moz-transition: all .5s ease;
 		}
 
 		.container {
 			width: 100%;
-			margin: 25% 0;
+			height: 56rem;
 			padding: 15px;
+			padding-top: 4rem;
 			overflow: hidden;
 		}
 
@@ -50,19 +53,6 @@
 
 		.neo-sub {
 			position: relative;
-			opacity: .5;
-			width: 100px;
-			transition: all 1s;
-			-moz-transition: all 1s;
-			/* Firefox 4 */
-			-webkit-transition: all 1s;
-			/* Safari 和 Chrome */
-		}
-
-		.neo-sub:hover {
-			opacity: 1;
-			background-color: rgb(133, 173, 21);
-			color: white;
 		}
 
 		.neo-sub i {
@@ -78,16 +68,22 @@
 			content: '';
 			right: 8px;
 			animation: rollBtn linear .6s infinite;
+			-webkit-animation: rollBtn linear .6s infinite;
+			-moz-animation: rollBtn linear .6s infinite;
 			display: none;
 			color: #fff;
 		}
 
 		@keyframes rollBtn {
 			0% {
-				transform: rotate(0deg)
+				transform: rotate(0deg);
+				-webkit-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
 			}
 			100% {
-				transform: rotate(360deg)
+				transform: rotate(360deg);
+				-webkit-transform: rotate(360deg);
+				-moz-transform: rotate(360deg);
 			}
 		}
 
