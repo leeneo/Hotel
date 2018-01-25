@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/LockCard.css">
     <title>Document</title>
     <style>
+
     </style>
 </head>
 
@@ -16,35 +17,27 @@
     <section class="neo-shadow">
         <div class="Lockcard_wrap">
             <h2 class="neo-logTitle">绑定会员卡</h2>
-                <ul class="fieldset">
-                    <li class="">
-                        <h3 class=" neo-lightBlue">会员卡号：</h3>
-                        <div class="">
-                            <input type="text" id="as_cardno" class="" placeholder="请输入会员卡号">
-                        </div>
-                    </li>
-                    <li class="">
-                        <h3 class=" neo-lightBlue">会员密码：</h3>
-                        <div class="">
-                            <input type="password" id="as_password" class="" placeholder="初始密码为空">
-                        </div>
-                    </li>
-                    <li class="">
-                        <h3 class="">
-                            <a class="neo-lightBlue">验证码：</a>
-                        </h3>
-                        <div class="">
-                            <input type="text" class="" id="code" name="code" placeholder="请输入验证码">
-                            <span class="">
-                                <button type="button" onclick="LockCard_SendMessage()" id="FbtnSendCode" class="neo-btn neo-inputBtn">立即获取</button>
-                                <!--<button type="button" class="" disabled>重新获取</button>-->
-                            </span>
-                        </div>
-                    </li>
-                </ul>
-                <div class="">
-                    <button id="LockCard" class="neo-btn-shadow" type="button">确定</button>
-                </div>
+            <ul class="fieldset">
+                <li class="">
+                    <h3 class=" neo-lightBlue">会员卡号：</h3>
+                    <input type="text" id="as_cardno" class="" placeholder="请输入会员卡号">
+                </li>
+                <li class="">
+                    <h3 class=" neo-lightBlue">会员密码：</h3>
+                    <input type="password" id="as_password" class="" placeholder="初始密码为空">
+                </li>
+                <li class="">
+                    <h3 class="neo-lightBlue">验证码：</h3>
+                    <div class="">
+                        <input type="text" class="inpYzm" id="code" name="code" placeholder="请输入验证码">
+                        <button type="button" onclick="LockCard_SendMessage()" id="FbtnSendCode" class="neo-btn neo-inputBtn">立即获取</button>
+                        <!--<button type="button" class="" disabled>重新获取</button>-->
+                    </div>
+                </li>
+            </ul>
+            <div class="neo-btnWrap">
+                <button id="LockCard" class=" neo-btn neo-btn-block neo-btn-shadow" type="button">确定</button>
+            </div>
         </div>
     </section>
 </body>
