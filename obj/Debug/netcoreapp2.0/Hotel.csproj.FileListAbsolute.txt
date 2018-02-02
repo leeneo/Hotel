@@ -1,0 +1,4 @@
+G:\leeneo\MyProj\Hotel\obj\Debug\netcoreapp2.0\Hotel.csprojResolveAssemblyReference.cache
+G:\leeneo\MyProj\Hotel\obj\Debug\netcoreapp2.0\Hotel.csproj.CoreCompileInputs.cache
+G:\leeneo\MyProj\Hotel\obj\Debug\netcoreapp2.0\Hotel.AssemblyInfoInputs.cache
+G:\leeneo\MyProj\Hotel\obj\Debug\netcoreapp2.0\Hotel.AssemblyInfo.cs
