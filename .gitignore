@@ -5,6 +5,9 @@
 *.jpg
 *.rar
 node_modules
+bin
+obj
+/.vs
 
 
 
